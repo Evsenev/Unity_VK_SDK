@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.Xdev.Test">
+  <application android:icon="@drawable/app_icon" android:label="@string/app_name">
+    <activity android:name="com.vk.sdk.VKOpenAuthActivity" />
+    <activity android:name="com.xdevs.vk.sdk.UnityVKActivity" android:label="@string/app_name" android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
+    <activity android:name="com.facebook.LoginActivity" android:configChanges="keyboardHidden|orientation" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen">
+    </activity>
+    <activity android:name="com.facebook.unity.FBUnityDeepLinkingActivity" android:exported="true">
+    </activity>
+    <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="\ 822485464436315" />
+    <meta-data android:name="PW_APPID" android:value="08272-53B51" />
+    <meta-data android:name="PW_PROJECT_ID" android:value="A145624850887" />
+    <meta-data android:name="PW_BROADCAST_PUSH" android:value="true" />
+    <activity android:name="com.unity3d.player.VideoPlayer" android:label="@string/app_name" android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen">
+    </activity>
+    <!-- ACTIVITIES -->
+    <!-- META-DATA -->
+    <service android:name="com.prime31.billing.BillingService" />
+    <receiver android:name="com.prime31.billing.BillingReceiver">
+      <intent-filter>
+        <action android:name="com.android.vending.billing.IN_APP_NOTIFY" />
+        <action android:name="com.android.vending.billing.RESPONSE_CODE" />
+        <action android:name="com.android.vending.billing.PURCHASE_STATE_CHANGED" />
+      </intent-filter>
+    </receiver>
+    <activity android:name="com.outlinegames.unibill.PurchaseActivity" android:label="@string/app_name" android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
+    <activity android:name="com.arellomobile.android.push.PushWebview" />
+    <activity android:name="com.arellomobile.android.push.MessageActivity" />
+    <activity android:name="com.arellomobile.android.push.PushHandlerActivity" />
+    <!-- Tapjoy -->
+    <activity android:name="com.tapjoy.TJCOffersWebView" android:configChanges="keyboardHidden|orientation|screenSize" />
+    <activity android:name="com.tapjoy.TapjoyFullScreenAdWebView" android:configChanges="keyboardHidden|orientation|screenSize" />
+    <activity android:name="com.tapjoy.TapjoyDailyRewardAdWebView" android:configChanges="keyboardHidden|orientation|screenSize" />
+    <activity android:name="com.tapjoy.TapjoyVideoView" android:configChanges="keyboardHidden|orientation|screenSize" />
+    <activity android:name="com.tapjoy.TJAdUnitView" android:configChanges="keyboardHidden|orientation|screenSize" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" android:hardwareAccelerated="true" />
+    <activity android:name="com.tapjoy.mraid.view.ActionHandler" android:configChanges="keyboardHidden|orientation|screenSize" />
+    <activity android:name="com.tapjoy.mraid.view.Browser" android:configChanges="keyboardHidden|orientation|screenSize" />
+    <!--
+          BroadcastReceiver that will receive intents from GCM
+          services and handle them to the custom IntentService.
+         
+          The com.google.android.c2dm.permission.SEND permission is necessary
+          so only GCM services can send data messages for the app.
+        -->
+    <receiver android:name="com.google.android.gcm.GCMBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+      <intent-filter>
+        <!-- Receives the actual messages. -->
+        <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+        <!-- Receives the registration id. -->
+        <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+        <category android:name="com.extremedevelopers.irontanks" />
+      </intent-filter>
+    </receiver>
+    <!--
+          Application-specific subclass of PushGCMIntentService that will
+          handle received messages.
+        -->
+    <service android:name="com.arellomobile.android.push.PushGCMIntentService" />
+    <receiver android:name="com.arellomobile.android.push.AlarmReceiver">
+    </receiver>
+    <activity android:name="com.facebook.unity.FBUnityDialogsActivity" android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen">
+    </activity>
+    <activity android:name="com.facebook.unity.FBUnityLoginActivity" android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen">
+    </activity>
+  </application>
+  <!-- PERMISSIONS -->
+  <uses-permission android:name="com.android.vending.BILLING" />
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+  <uses-feature android:glEsVersion="0x00020000" />
+  <uses-sdk android:minSdkVersion="9" android:targetSdkVersion="19" />
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+  <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+  <!--TapJoy-->
+  <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+  <!--library-->
+  <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+  <!-- GCM connects to Google Services. -->
+  <uses-permission android:name="android.permission.INTERNET" />
+  <!-- GCM requires a Google account. -->
+  <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+  <!-- Keeps the processor from sleeping when a message is received. -->
+  <uses-permission android:name="android.permission.WAKE_LOCK" />
+  <!--
+      Creates a custom permission so only this app can receive its messages.
+     
+      NOTE: the permission *must* be called PACKAGE.permission.C2D_MESSAGE,
+            where PACKAGE is the application's package name.
+    -->
+  <permission android:name="com.extremedevelopers.irontanks.permission.C2D_MESSAGE" android:protectionLevel="signature" />
+  <uses-permission android:name="com.extremedevelopers.irontanks.permission.C2D_MESSAGE" />
+  <!-- This app has permission to register and receive data message. -->
+  <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+</manifest>
